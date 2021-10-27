@@ -11,14 +11,14 @@ import { Elements } from "@stripe/react-stripe-js";
 
 const stripePromise = loadStripe('pk_test_Ut6rjxrjvQumuE0ijeP8sNmr00ufIjrvZV');
 
-// Forward properties from `_middleware.tsx`
-export const getServerSideProps = ({ query }) => ({
+// Forward properties from `_middleware.ts`
+export const getServerSideProps = ({ query }: any) => ({
   props: query,
 })
 
 const Home: NextPage = ({
   country
-}) => {
+}: any) => {
   country = decodeURIComponent(country);  
 
   const [clientSecret, setClientSecret] = useState("");
