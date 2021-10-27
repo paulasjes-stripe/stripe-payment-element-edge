@@ -13,6 +13,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       const paymentMethodTypes: Array<string> = ['card'];
       let currency: string = 'usd';
 
+      console.log(`Creating PaymentIntent for: ${req.query.country}`);
+
       // The Payment Element will automatically hide and show payment methods based on the customer's locale
       // but Edge Functions allows us to customize further by only specifying the use of a payment method if the 
       // customer's country matches
