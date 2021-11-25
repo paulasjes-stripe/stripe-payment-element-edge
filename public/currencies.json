@@ -1,0 +1,95 @@
+{
+  "USD": {
+    "symbol": "$",
+    "minimum": "0.50"
+  },
+  "AED": {
+    "symbol": "د.إ",
+    "minimum": "2.00"
+  },
+  "AUD": {
+    "symbol": "$",
+    "minimum": "0.50"
+  },
+  "BGN": {
+    "symbol": "лв",
+    "minimum": "1.00"
+  },
+  "BRL": {
+    "symbol": "R$",
+    "minimum": "0.50"
+  },
+  "CAD": {
+    "symbol": "$",
+    "minimum": "0.50"
+  },
+  "CHF": {
+    "symbol": "Fr",
+    "minimum": "0.50"
+  },
+  "CZK": {
+    "symbol": "Kč",
+    "minimum": "15.00"
+  },
+  "DKK": {
+    "symbol": "kr.",
+    "minimum": "2.50"
+  },
+  "EUR": {
+    "symbol": "€",
+    "minimum": "0.50"
+  },
+  "GBP": {
+    "symbol": "£",
+    "minimum": "0.30"
+  },
+  "HKD": {
+    "symbol": "$",
+    "minimum": "4.00"
+  },
+  "HUF": {
+    "symbol": "Ft",
+    "minimum": "175.00"
+  },
+  "INR": {
+    "symbol": "₹",
+    "minimum": "0.50"
+  },
+  "JPY": {
+    "symbol": "¥",
+    "minimum": "50",
+    "zeroDecimal": true
+  },
+  "MXN": {
+    "symbol": "$",
+    "minimum": "10"
+  },
+  "MYR": {
+    "symbol": "RM",
+    "minimum": "2"
+  },
+  "NOK": {
+    "symbol": "kr",
+    "minimum": "3.00"
+  },
+  "NZD": {
+    "symbol": "$",
+    "minimum": "0.50"
+  },
+  "PLN": {
+    "symbol": "zł",
+    "minimum": "2.00"
+  },
+  "RON": {
+    "symbol": "lei",
+    "minimum": "2.00"
+  },
+  "SEK": {
+    "symbol": "kr",
+    "minimum": "3.00"
+  },
+  "SGD": {
+    "symbol": "$",
+    "minimum": "0.50"
+  }
+}

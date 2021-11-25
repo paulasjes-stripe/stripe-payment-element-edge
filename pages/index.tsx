@@ -19,24 +19,28 @@ export const getServerSideProps = ({ query }: any) => ({
 const Home: NextPage = ({
   country
 }: any) => {
-  country = decodeURIComponent(country);  
+  country = decodeURIComponent(country);
 
-  const [clientSecret, setClientSecret] = useState("");
-  
+  const [clientSecret, setClientSecret] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [currency, setCurrency] = useState('USD');
+
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch("api/payment_intent", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },      
+      headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
       .then((data) => {
-        setClientSecret(data.clientSecret)
+        setClientSecret(data.clientSecret);
+        setAmount(data.amount);
+        setCurrency(data.currency);
       });
   }, []);
 
   const options = {
-    clientSecret
+    clientSecret,
   };
 
   return (
@@ -53,8 +57,15 @@ const Home: NextPage = ({
         </h1>
 
         <p>
-          Edge says you are in: {country}.          
+          This sample will use Next.js' middleware in combination with Stripe's Payment Element and Automatic Payment Methods.
+          After enabling all the possible PaymentMethods in the dashboard, we can use the geolocation data from Next.js to calculate the Purchasing Power Parity price and use the correct currency.
+          The Payment Element will then automatically pick the PaymentMethods best suited for the currency and location combination.
         </p>
+
+        <p>
+          Geolocation says you are in: {country}. With PPP enabled, you will be charged {currency} {amount} instead of USD $100.
+        </p>
+
 
         <div className={styles.description}>
         {clientSecret && (
@@ -64,18 +75,6 @@ const Home: NextPage = ({
           )}
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
